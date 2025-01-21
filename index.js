@@ -5,14 +5,19 @@ function adicionarTarefa() {
      let inputTarefa = document.getElementById('inputTarefa')     
      let tarefa = inputTarefa.value
      
-    document.getElementById("mensagem").textContent = mensagem;
+     if (tarefa !== "") {
+        document.getElementById("mensagem").textContent = mensagem;
 
-     let listaTarefas = document.getElementById('listaTarefas')
-     let novaTarefa = document.createElement('li')
+        let listaTarefas = document.getElementById('listaTarefas')
+        let novaTarefa = document.createElement('li')
+    
+        novaTarefa.textContent = tarefa
+    
+        listaTarefas.appendChild(novaTarefa)
+    
+        inputTarefa.value = "" // Limpa o campo de input
+     }
 
-     novaTarefa.textContent = tarefa
-
-     listaTarefas.appendChild(novaTarefa)
-
-     inputTarefa.value = ""
+    else
+        alert('Não é possível inserir uma tarefa vazia');
 };
