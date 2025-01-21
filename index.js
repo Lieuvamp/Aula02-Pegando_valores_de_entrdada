@@ -3,7 +3,7 @@ function adicionarTarefa() {
     // O código abaixo realiza o input
 
      let inputTarefa = document.getElementById('inputTarefa')     
-     let tarefa = inputTarefa.value
+     let tarefa = inputTarefa.value.trim()
      
      if (tarefa !== "") {
         document.getElementById("mensagem").textContent = mensagem;
@@ -15,9 +15,10 @@ function adicionarTarefa() {
     
         listaTarefas.appendChild(novaTarefa)
     
-        inputTarefa.value = "" // Limpa o campo de input
      }
 
     else
         alert('Não é possível inserir uma tarefa vazia');
+
+    inputTarefa.value = "" // Limpa o campo de input
 };
